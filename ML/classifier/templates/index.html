@@ -1,0 +1,19 @@
+<!doctype html>
+<head>
+
+</head>
+<body>
+	<center><h1>Diabetis prediction using ML</h1></center>
+<form method="post" action="{% url 'predict' %}">
+	{% csrf_token %}
+	<input type="text" name="1" placeholder="Glucose value eg:148.000" size="40"><br><br>
+	<input type="text" name="2" placeholder="BloodPressure value eg:72.000" size="40"><br><br>
+	<input type="text" name="3" placeholder="Age eg:50.000" size="40"><br><br>
+	<input type="text" name="4" placeholder="Insulin value eg:0.000" size="40"><br><br>
+	<input type="text" name="5" placeholder="BMI value eg:33.600" size="40"><br><br>
+	<input type="text" name="6" placeholder="DiabetesPedigreeFunction value eg:0.627" size="40"><br><br>
+	<input type="submit" name="submit" value="p r e d i c t">
+</form><br>
+<button><a href="{% url 'index' %}"> clear output </a></button>
+<h1>output : {{res}} </h1>
+</body>
